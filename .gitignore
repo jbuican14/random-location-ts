@@ -1,0 +1,10 @@
+# misc
+/.DS_Store
+/.cache
+
+# dependencies
+/node_modules
+
+#production
+/dist/
+
