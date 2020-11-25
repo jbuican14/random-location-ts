@@ -1,14 +1,16 @@
 import 'googlemaps';
 
-interface Mappable {
+export interface Mappable {
   location: {
     lat: number;
     lng: number;
   };
+
+  markerInfo(): string;
 }
 
 export class CustomMap {
-  private googleMap: google.maps.Map;
+  private googleMap: google.maps.Map; // only reference from inside only
 
   constructor(divElm: string) {
     this.googleMap = new google.maps.Map(document.getElementById(divElm), {
@@ -23,12 +25,20 @@ export class CustomMap {
 
   addMarker(mappable: Mappable): void {
     // console.log(this.googleMap);
-    new google.maps.Marker({
+    const marker = new google.maps.Marker({
       map: this.googleMap,
       position: {
         lat: mappable.location.lat,
         lng: mappable.location.lng,
       },
+    });
+
+    marker.addListener('click', () => {
+      const infoWindow = new google.maps.InfoWindow({
+        content: mappable.markerInfo(),
+      });
+
+      infoWindow.open(this.googleMap, marker);
     });
   }
 }
