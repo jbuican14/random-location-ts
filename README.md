@@ -11,6 +11,11 @@ Classes & Interfaces in Typescript
   --npm install -g parcel-bundler
 - faker and type definition for faker
   --npm install @types/faker
+- google type definition file
+  --npm install @types/googlemaps
+
+How to run a project
+`parcel index.html`
 
 import 'googlemaps'
 source file :

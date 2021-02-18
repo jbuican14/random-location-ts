@@ -7,22 +7,25 @@ export class Company {
     lat: number;
     lng: number;
   };
+  companyImage: string;
 
   constructor() {
     this.companyName = faker.company.companyName();
     this.catchPhrase = faker.company.catchPhrase();
 
     this.location = {
-      lat: parseFloat(faker.address.latitude()),
-      lng: parseFloat(faker.address.longitude()),
+      lat: +faker.address.latitude(),
+      lng: +faker.address.longitude(),
     };
+    this.companyImage = faker.image.business();
   }
 
   markerInfo(): string {
     return `
     <div>
-    <h1>Company Name: ${this.companyName}</h1>
-    Catchphrase: ${this.catchPhrase}
+    <p>I work at <strong> ${this.companyName}</strong></p>
+    <p>Catchphrase : <strong>${this.catchPhrase}</strong> </p>
+    <img class="Company-img" src=${this.companyImage} alt=${this.companyName} />
     </div>`;
   }
 }

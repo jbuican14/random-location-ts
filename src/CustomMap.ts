@@ -39,6 +39,7 @@ export class CustomMap {
       });
 
       infoWindow.open(this.googleMap, marker);
+      this.googleMap.setZoom(3);
     });
   }
 }
