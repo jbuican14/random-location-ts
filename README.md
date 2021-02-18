@@ -22,3 +22,5 @@ source file :
 https://developers.google.com/maps/documentation/javascript/maxzoom
 
 https://developers.google.com/maps/documentation/javascript/infowindows
+
+![Screenshot](https://raw.githubusercontent.com/jbuican14/random-location-ts/ba62e808939823ca0887c32c3b1cead78fa683ca/CustomMap-TypeScript.png)
